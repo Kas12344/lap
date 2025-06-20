@@ -1,0 +1,34 @@
+
+{
+  "indexes": [
+    {
+      "collectionGroup": "laptops",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "featured",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "price",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "laptops",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "newArrival",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

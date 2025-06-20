@@ -1,0 +1,22 @@
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Laptops collection:
+    // Allow public read for listing products
+    // Allow authenticated users (admins) to write (create, update, delete)
+    // THIS IS A BASIC RULE. For production, you'd want to restrict writes
+    // more specifically, e.g., to users with an "admin" custom claim.
+    match /laptops/{laptopId} {
+      allow read: if true;
+      allow write: if request.auth != null; // Allows any authenticated user to write. Refine for admin roles.
+    }
+
+    // Example for a 'brands' collection if you add one later
+    // match /brands/{brandId} {
+    //   allow read: if true;
+    //   allow write: if request.auth != null; // Or based on admin role
+    // }
+  }
+}

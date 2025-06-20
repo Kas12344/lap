@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 206 100% 97%; /* Very Light Blue */
+    --foreground: 222 80% 10%; /* Dark Blue/Black for text */
+    --card: 206 100% 99%; /* Slightly off from background for cards */
+    --card-foreground: 222 80% 10%;
+    --popover: 206 100% 99%;
+    --popover-foreground: 222 80% 10%;
+    --primary: 225 63% 33%; /* Dark Blue */
+    --primary-foreground: 210 40% 98%; /* Light color for text on primary */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 225 63% 33%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 210 30% 50%;
+    --accent: 160 60% 52%; /* Teal */
+    --accent-foreground: 222 80% 5%; /* Dark color for text on accent */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 225 63% 33%; /* Dark Blue for rings */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+
+    /* Sidebar specific variables, can be adjusted if admin uses sidebar */
+    --sidebar-background: 225 63% 25%; /* Darker shade of primary for admin sidebar */
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 160 60% 52%; /* Teal for active items in sidebar */
+    --sidebar-primary-foreground: 222 80% 5%;
+    --sidebar-accent: 225 63% 30%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 225 63% 20%;
+    --sidebar-ring: 160 60% 52%;
+  }
+
+  .dark {
+    /* Define dark theme variables if needed, for now consistent with light */
+    --background: 222 80% 8%; /* Dark background for dark mode */
+    --foreground: 210 40% 98%; /* Light foreground */
+    --card: 222 80% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 80% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 225 63% 45%; /* Slightly lighter Dark Blue for dark mode */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 210 40% 15%;
+    --muted-foreground: 210 30% 60%;
+    --accent: 160 60% 52%; /* Teal */
+    --accent-foreground: 222 80% 5%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
+    --ring: 160 60% 52%; /* Teal for rings in dark mode */
+
+    --sidebar-background: 222 80% 12%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 160 60% 52%;
+    --sidebar-primary-foreground: 222 80% 5%;
+    --sidebar-accent: 222 80% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 80% 10%;
+    --sidebar-ring: 160 60% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Subtle fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+}
