@@ -1,9 +1,17 @@
+import { createClient } from '@/utils/supabase/server'
+import { cookies } from 'next/headers'
 
-import { createClient } from '@/utils/supabase/server';
+export default async function Page() {
+  const cookieStore = await cookies()
+  const supabase = createClient(cookieStore)
 
-export default async function Notes() {
-  const supabase = await createClient();
-  const { data: notes } = await supabase.from("notes").select();
+  const { data: todos } = await supabase.from('todos').select()
 
-  return <pre>{JSON.stringify(notes, null, 2)}</pre>
+  return (
+    <ul>
+      {todos?.map((todo) => (
+        <li>{todo}</li>
+      ))}
+    </ul>
+  )
 }
