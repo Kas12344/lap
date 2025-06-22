@@ -1,7 +1,7 @@
 // app/api/add-laptop/route.ts
 
 import { NextResponse } from 'next/server';
-import { createClient } from '@/utils/supabase/server'; // Adjust if needed
+import { createClient } from '@/utils/supabase/server.ts'; // Adjust if needed
 
 export async function POST(req: Request) {
   const supabase = createClient();
